@@ -38,6 +38,9 @@
 // Passe o identificador (`id`) do item como parâmetro para `removerItemPedidos`, o mesmo que você usa no `map`.
 // No conteúdo do botão, coloque o texto "Remover".
 import { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+        
 export default function Home() {
     const [listadeBolos, setBolos] = useState([
         {
@@ -84,7 +87,10 @@ export default function Home() {
     }
 
     return (
-        <div>
+     
+    <div>
+          <Header title={"Meus bolos"} />
+    
             <h1>Bolos da Julieta</h1>
             {
                 listadeBolos.map((bolo) =>
@@ -102,6 +108,7 @@ export default function Home() {
                         <p>{bolo.item}</p>
                         <p>{bolo.preco}</p>
                         <button onClick={() => removerBolo(bolo.id)}> Remover compra </button>
+                        <Footer desenvolvedor={"hmm"} />
                     </div>
                 )
             }
